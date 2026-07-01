@@ -3,7 +3,7 @@ name: Cleanup GitHub packages
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"  # every day at midnight
+    - cron: "0 0 * * *" # every day at midnight
 
 permissions:
   packages: write
@@ -17,6 +17,6 @@ jobs:
         with:
           account: user
           token: ${{ secrets.GITHUB_TOKEN }}
-          image-names: "ubi9-oc-mirror"
+          image-names: "ubi9-oc-tools"
           cut-off: 1m
           keep-n-most-recent: 5
