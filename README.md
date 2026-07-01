@@ -1,3 +1,3 @@
-# ubi9-oc-mirror
+# ubi9-oc-tools
 
-Let's run `oc mirror` in a container.
+Let's run `oc`, `openshift-install` and `oc mirror` in a container.
