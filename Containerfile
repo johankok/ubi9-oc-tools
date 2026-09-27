@@ -10,6 +10,6 @@ FROM registry.access.redhat.com/ubi9-minimal:9.8-1782797275@sha256:463cae32c6f6f
 LABEL org.opencontainers.image.source="https://github.com/johankok/ubi9-oc-tools" \
       org.opencontainers.image.description="Let's run oc, openshift-install and oc mirror in a container"
 
-RUN microdnf install -y pigz && microdnf clean all
+RUN microdnf install -y jq nmstate pigz  && microdnf clean all
 
 COPY --from=build /usr/local/bin/* /usr/local/bin/
