@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/ubi9-minimal:9.8-1793578971@sha256:dfa0eb04abc59221544e74862432496add1f491f915c9b531880f91affc0e12c AS build
 
-RUN microdnf install -y gzip tar && microdnf clean all
+RUN microdnf install -y gzip jq tar && microdnf clean all
 
 ADD bin/download-oc-tools.sh .
 RUN ./download-oc-tools.sh
