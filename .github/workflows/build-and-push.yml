@@ -71,7 +71,7 @@ jobs:
       - name: Sign image with Cosign (keyless)
         if: github.event_name != 'pull_request'
         env:
-          IMAGE_REF: ${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.push-image.outputs.digest }}
+          IMAGE_REF: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.push-image.outputs.digest }}
           REGISTRY_USER: ${{ github.actor }}
           REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -85,7 +85,7 @@ jobs:
         run: |
           cosign verify "$IMAGE_REF" \
             --certificate-oidc-issuer https://token.actions.githubusercontent.com \
-            --certificate-identity-regexp "^https://github\.com/${{ github.repository }}/\.github/workflows/build-scan-push\.yml@"
+            --certificate-identity-regexp "^https://github\.com/${{ github.repository }}/\.github/workflows/build-and-push\.yml@"
 
       - name: Print image reference
         if: github.event_name != 'pull_request'
