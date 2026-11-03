@@ -11,6 +11,8 @@ jobs:
     permissions:
       contents: read
       packages: write
+      security-events: write
+      id-token: write
     env:
       IMAGE_NAME: ubi9-oc-tools
       REGISTRY: ghcr.io/johankok
