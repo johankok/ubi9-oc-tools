@@ -81,7 +81,7 @@ jobs:
       - name: Verify image signature
         if: github.event_name != 'pull_request'
         env:
-          IMAGE_REF: ${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.push-image.outputs.digest }}
+          IMAGE_REF: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.push-image.outputs.digest }}
         run: |
           cosign verify "$IMAGE_REF" \
             --certificate-oidc-issuer https://token.actions.githubusercontent.com \
