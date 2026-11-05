@@ -15,6 +15,7 @@ RUN microdnf install -y \
       jq \
       less \
       nmstate \
+      openssh-clients \
       pigz \
       procps-ng \
       rsync \
