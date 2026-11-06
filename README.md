@@ -22,8 +22,10 @@ Supporting tools:
 - `nmstate` for working with network configuration with agent based installer
 - `pigz` for fast parallel compression
 - `bash-completion` with completion for `oc` and `openshift-install`
+- `ssh` for emergency access to nodes
 - `tar` for unpacking archives such as must-gather output
 - `rsync` so `oc rsync` can use its default rsync strategy
+- `vi` so `oc edit` can use it
 
 ## Usage
 
