@@ -20,6 +20,7 @@ RUN microdnf install -y \
       procps-ng \
       rsync \
       tar \
+      vim-minimal
     && microdnf clean all
 
 COPY --from=build /usr/local/bin/* /usr/local/bin/
