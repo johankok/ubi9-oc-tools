@@ -1,11 +1,11 @@
-FROM registry.access.redhat.com/ubi9-minimal:9.9-1794467051@sha256:baafce2d34783a28b4a472779f304e97e00f9d35c99553bc53b068b14344d9a9 AS build
+FROM registry.access.redhat.com/ubi9-minimal:9.9-1795001629@sha256:d8162789d7913ef8941481687b92ab4bbec311870948f66cf52b9cc7e0c57c06 AS build
 
 RUN microdnf install -y gzip jq tar && microdnf clean all
 
 ADD bin/download-oc-tools.sh .
 RUN ./download-oc-tools.sh
 
-FROM registry.access.redhat.com/ubi9-minimal:9.9-1794467051@sha256:baafce2d34783a28b4a472779f304e97e00f9d35c99553bc53b068b14344d9a9
+FROM registry.access.redhat.com/ubi9-minimal:9.9-1795001629@sha256:d8162789d7913ef8941481687b92ab4bbec311870948f66cf52b9cc7e0c57c06
 
 LABEL org.opencontainers.image.source="https://github.com/johankok/ubi9-oc-tools" \
       org.opencontainers.image.description="Let's run oc, openshift-install and oc mirror in a container"
